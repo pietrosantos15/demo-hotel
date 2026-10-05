@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Alvorada Serra | Hospedagem na serra</title>
+<meta name="description" content="Suítes, chalés e quartos com café da manhã, piscina aquecida e vista para o vale. Consulte a disponibilidade pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="vista" viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice">
+    <rect width="400" height="280" style="fill:var(--sky)"/>
+    <circle cx="290" cy="92" r="28" style="fill:var(--sun)"/>
+    <path d="M0 205 L90 120 L170 190 L250 108 L330 182 L400 140 V280 H0Z" style="fill:var(--m1)"/>
+    <path d="M0 245 C80 205 160 255 260 225 S360 232 400 218 V280 H0Z" style="fill:var(--m2)"/>
+  </symbol>
+</svg>
+
+<header class="top">
+  <a class="brand" href="#inicio" data-brand>Hotel Alvorada Serra</a>
+  <nav aria-label="Principal">
+    <a href="#acomodacoes">Acomodações</a>
+    <a href="#estrutura">Estrutura</a>
+    <a href="#arredores">Arredores</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <svg class="landscape" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1B2547"/><stop offset=".5" stop-color="#6B5B8F"/><stop offset="1" stop-color="#F2B38A"/>
+        </linearGradient>
+        <radialGradient id="brilho"><stop offset="0" stop-color="#FBD38D" stop-opacity=".9"/><stop offset="1" stop-color="#FBD38D" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="1440" height="700" fill="url(#ceu)"/>
+      <g class="sun">
+        <circle cx="720" cy="440" r="190" fill="url(#brilho)"/>
+        <circle cx="720" cy="440" r="64" fill="#FBD38D"/>
+      </g>
+      <path d="M0 520 L120 430 L240 500 L380 380 L520 480 L700 360 L880 470 L1040 400 L1200 490 L1330 420 L1440 480 V700 H0Z" fill="#6F77A6"/>
+      <path d="M0 585 L160 500 L300 570 L460 470 L620 560 L800 480 L960 575 L1120 500 L1280 570 L1440 510 V700 H0Z" fill="#3E4C86"/>
+      <path d="M0 645 C200 595 360 655 560 615 S900 575 1100 625 S1340 605 1440 635 V700 H0Z" fill="#2F5D50"/>
+      <g fill="#1F4338">
+        <path d="M70 650 l20 -70 l20 70z"/><path d="M118 656 l16 -54 l16 54z"/><path d="M1280 640 l22 -76 l22 76z"/><path d="M1330 648 l16 -56 l16 56z"/><path d="M1380 654 l18 -62 l18 62z"/>
+      </g>
+    </svg>
+    <div class="hero-text">
+      <h1>Dois dias na serra valem uma semana de descanso</h1>
+      <p>Suítes, chalés e quartos com café da manhã regional, piscina aquecida e vista para o vale. Escolha as datas e consulte a disponibilidade pelo WhatsApp.</p>
+    </div>
+  </section>
+
+  <form class="booking" id="reserva" novalidate aria-label="Consultar disponibilidade">
+    <label>Entrada<input type="date" name="entrada" required></label>
+    <label>Saída<input type="date" name="saida" required></label>
+    <label>Hóspedes
+      <select name="hospedes">
+        <option value="1">1 hóspede</option><option value="2" selected>2 hóspedes</option><option value="3">3 hóspedes</option>
+        <option value="4">4 hóspedes</option><option value="5">5 hóspedes</option><option value="6">6 hóspedes</option>
+      </select>
+    </label>
+    <button class="btn" type="submit">Consultar disponibilidade</button>
+    <p class="error" id="err" role="alert" hidden></p>
+  </form>
+
+  <section id="acomodacoes" class="block">
+    <h2>Onde você vai dormir</h2>
+    <p class="lead">Valores por noite, para duas pessoas, com café da manhã. Em feriados e alta temporada o valor muda, e a recepção informa na consulta.</p>
+
+    <article class="room">
+      <svg class="scene" viewBox="0 0 400 280" role="img" aria-label="Ilustração de amanhecer sobre montanhas" style="--sky:#F2B38A;--sun:#FBD38D;--m1:#6F77A6;--m2:#3E4C86"><use href="#vista"/></svg>
+      <div>
+        <h3>Suíte Mirante</h3>
+        <p>Cama king, varanda privativa e vista aberta para o vale. É a primeira a ver o sol nascer e a que mais esgota nos fins de semana.</p>
+        <p class="meta">2 pessoas, 38 m², banheira de hidromassagem</p>
+        <p class="price">A partir de <strong>R$ 490</strong> por noite</p>
+      </div>
+    </article>
+
+    <article class="room room-flip">
+      <svg class="scene" viewBox="0 0 400 280" role="img" aria-label="Ilustração de entardecer sobre pinheiros" style="--sky:#5B4B7A;--sun:#E8B66A;--m1:#2F5D50;--m2:#1F4338"><use href="#vista"/></svg>
+      <div>
+        <h3>Chalé Pinheiral</h3>
+        <p>Chalé independente entre os pinheiros, com lareira, cozinha pequena e sala. Bom para famílias e para quem quer ficar mais dias.</p>
+        <p class="meta">Até 4 pessoas, 52 m², lareira e cozinha</p>
+        <p class="price">A partir de <strong>R$ 690</strong> por noite</p>
+      </div>
+    </article>
+
+    <article class="room">
+      <svg class="scene" viewBox="0 0 400 280" role="img" aria-label="Ilustração de dia claro sobre colinas" style="--sky:#BFD7EA;--sun:#FFF3C4;--m1:#8DB3A3;--m2:#4F8A6F"><use href="#vista"/></svg>
+      <div>
+        <h3>Quarto Jardim</h3>
+        <p>No térreo, com acesso direto ao jardim e à piscina. Adaptado para pessoas com mobilidade reduzida.</p>
+        <p class="meta">2 pessoas, 28 m², acessível</p>
+        <p class="price">A partir de <strong>R$ 340</strong> por noite</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="estrutura" class="block block-tint">
+    <h2>O que está incluso</h2>
+    <ul class="amen">
+      <li>Café da manhã regional, das 7h30 às 10h30</li>
+      <li>Piscina aquecida, aberta das 8h às 20h</li>
+      <li>Spa e massagens, com reserva</li>
+      <li>Wi-Fi em todos os ambientes</li>
+      <li>Estacionamento gratuito e coberto</li>
+      <li>Pets de pequeno porte são bem-vindos</li>
+      <li>Recepção 24 horas</li>
+      <li>Acessibilidade em todo o térreo</li>
+    </ul>
+  </section>
+
+  <section id="arredores" class="block">
+    <h2>O que fazer por perto</h2>
+    <div class="near">
+      <div><h3>Mirante do Pôr do Sol</h3><p>Trilha leve de 15 minutos a pé, saindo do hotel. Vale chegar meia hora antes.</p></div>
+      <div><h3>Cachoeira do Véu</h3><p>15 minutos de carro, com poço para banho e trilha curta. Leve calçado fechado.</p></div>
+      <div><h3>Centro histórico</h3><p>10 minutos de carro, com restaurantes, cafés e feira de artesanato aos sábados.</p></div>
+    </div>
+  </section>
+
+  <section class="block block-tint" aria-labelledby="info">
+    <h2 id="info">Informações da estadia</h2>
+    <dl class="info">
+      <div><dt>Entrada</dt><dd>A partir das 14h</dd></div>
+      <div><dt>Saída</dt><dd>Até as 12h</dd></div>
+      <div><dt>Cancelamento</dt><dd>Gratuito até 7 dias antes da entrada</dd></div>
+      <div><dt>Crianças</dt><dd>Até 6 anos não pagam, no quarto dos pais</dd></div>
+    </dl>
+    <div class="quotes">
+      <blockquote><p>Acordamos com o sol dentro do quarto e tomamos café olhando o vale. Voltamos no feriado seguinte.</p><footer>Hóspede de exemplo</footer></blockquote>
+      <blockquote><p>O chalé tinha tudo para os quatro dias com as crianças, e a recepção resolveu cada pedido no mesmo instante.</p><footer>Hóspede de exemplo</footer></blockquote>
+    </div>
+    <p class="note">Depoimentos de exemplo desta página de demonstração. Troque pelos de hóspedes reais antes de publicar.</p>
+  </section>
+
+  <section id="contato" class="block">
+    <h2>Como chegar e falar com a gente</h2>
+    <div class="contact">
+      <div>
+        <h3>Endereço</h3>
+        <p>Estrada da Serra, km 12<br>Sua Cidade</p>
+        <p><a class="link" href="https://www.google.com/maps/search/?api=1&query=Estrada+da+Serra+km+12" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
+      </div>
+      <div>
+        <h3>Reservas</h3>
+        <p><a class="link" data-wa="Olá! Gostaria de informações sobre hospedagem." data-phone href="https://wa.me/5500900000000">(00) 90000-0000</a></p>
+        <p>Resposta em até 2 horas, das 8h às 20h.</p>
+      </div>
+      <div>
+        <h3>Formas de pagamento</h3>
+        <p>Pix, cartão em até 6 vezes e dinheiro. Sinal de 30% para garantir a reserva.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span data-brand>Hotel Alvorada Serra</span>
+  <span>Site de demonstração com conteúdo de exemplo.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
