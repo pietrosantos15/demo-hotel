@@ -11,7 +11,7 @@ const fmtPhone = n => {
 
 if (NOME) {
   document.querySelectorAll("[data-brand]").forEach(el => (el.textContent = NOME));
-  document.title = NOME + " | Hospedagem na serra";
+  document.title = NOME + " | Durma bem, acorde pronto";
 }
 document.querySelectorAll("a[data-wa]").forEach(a => (a.href = waUrl(a.dataset.wa)));
 if (params.get("wa")) document.querySelectorAll("[data-phone]").forEach(el => (el.textContent = fmtPhone(WA)));
@@ -35,14 +35,29 @@ form.entrada.addEventListener("change", () => {
 
 form.addEventListener("submit", e => {
   e.preventDefault();
-  const { entrada, saida, hospedes } = form;
+  const { entrada, saida, hospedes, unidade, promo } = form;
   let msg = "";
   if (!entrada.value || !saida.value) msg = "Escolha a data de entrada e a de saída.";
+  else if (entrada.value < iso(new Date())) msg = "A entrada não pode ser em uma data passada.";
   else if (saida.value <= entrada.value) msg = "A saída precisa ser depois da entrada.";
   err.hidden = !msg;
   err.textContent = msg;
   if (msg) return;
   const noites = Math.round((new Date(saida.value) - new Date(entrada.value)) / dia);
   const n = hospedes.value;
-  window.open(waUrl(`Olá! Gostaria de consultar disponibilidade de ${br(entrada.value)} a ${br(saida.value)} (${noites} ${noites > 1 ? "noites" : "noite"}) para ${n} ${n === "1" ? "hóspede" : "hóspedes"}.`), "_blank", "noopener");
+  const cod = promo.value.trim();
+  const texto = `Olá! Gostaria de consultar disponibilidade na unidade ${unidade.value} de ${br(entrada.value)} a ${br(saida.value)} (${noites} ${noites > 1 ? "noites" : "noite"}) para ${n} ${n === "1" ? "hóspede" : "hóspedes"}.` + (cod ? ` Código promocional: ${cod}.` : "");
+  window.open(waUrl(texto), "_blank", "noopener");
 });
+
+/* Menu no celular */
+const btn = document.querySelector(".menu-btn");
+const menu = document.getElementById("menu");
+const fecha = () => { menu.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); };
+btn.addEventListener("click", () => {
+  const abre = !menu.classList.contains("open");
+  menu.classList.toggle("open", abre);
+  btn.setAttribute("aria-expanded", String(abre));
+});
+menu.addEventListener("click", e => { if (e.target.closest("a")) fecha(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") fecha(); });
