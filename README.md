@@ -1,38 +1,30 @@
-# Soneca Hotéis: site de demonstração para hotel urbano
+# Hotel Ipê Real: site de demonstração para hotel de médio porte
 
-Site estático (HTML, CSS e JavaScript puro, sem build) para mostrar a clientes como ficaria a página de um hotel urbano de rede. Nome, marca, unidades, preços e condições são fictícios.
+Site estático (HTML, CSS e JavaScript puro, sem build) para mostrar a clientes como ficaria a página de um hotel 3-4 estrelas em cidade turística, com reserva direta por WhatsApp. Nome, preços, endereço, distâncias e políticas são fictícios.
 
 ## Inspiração
-Hotelaria urbana moderna e simpática, no estilo das redes econômicas e midscale: muito branco, blocos de cor vivos, barra de reserva grande no topo, cards de ofertas, "por que reservar direto" e o sono como protagonista. É um trabalho "inspirado em": nome, logotipo (travesseiro-nuvem com lua, original em SVG), textos e ilustrações são próprios e não reproduzem nenhuma marca real.
+Estrutura de páginas de hotéis de rede e de agregadores (página de hotel Mercure/Accor, Reserving e Expedia): hero com foto grande e barra de reserva, faixa de fatos (check-in, café, estacionamento), apartamentos com metragem, capacidade e preço, comodidades, localização com distâncias, políticas e FAQ. Nome, logotipo (arco em SVG), textos e layout são próprios.
 
-- Paleta: azul-marinho `#0E1B3D`, coral `#F0413F`, menta `#2BB5A0`, amarelo-sol `#FFC93C`, branco e névoa `#F3F5FA`.
-- Fonte: Figtree (Google Fonts), com fallback para fontes do sistema.
-- Cantos arredondados de 14 a 20 px, ilustrações em SVG inline (sem imagens externas).
+- Paleta: verde-petróleo `#1E3B36`, areia `#F5F0E7`, papel `#FCFAF6`, latão `#7E5B25`, tinta `#1D2220`, verde WhatsApp `#1C7A4A`.
+- Fontes (Google Fonts): Cormorant Garamond (títulos) e Source Sans 3 (texto).
 
-## Ver no ar
-No GitHub: **Settings > Pages > Deploy from a branch > `main` / `/ (root)`**. O link fica em `https://SEU-USUARIO.github.io/demo-hotel/`.
+## Personalizar sem editar código
+`?wa=5515991234567&nome=Hotel%20do%20Cliente` troca os botões de WhatsApp, o telefone exibido e o nome da marca.
 
-## Personalizar para um cliente sem editar código
-```
-https://SEU-USUARIO.github.io/demo-hotel/?wa=5515991234567&nome=Hotel%20do%20Cliente
-```
-- `wa`: número com código do país e DDD, só dígitos. Troca todos os botões, a consulta de datas e o telefone exibido.
-- `nome`: troca o nome da marca no topo, no rodapé e na aba do navegador.
+## Fotos (Unsplash, hotlink; trocar por fotos do cliente em `assets/`, basta alterar o `src`)
+- Hero: fachada de hotel durante o dia (photo-1551016043-06ec2173531b)
+- Standard: cama com roupa branca (1631049307264); Superior: cama de madeira com vista para jardim (1611892440504); Família: cama com cabeceira de madeira (1582719478250); Suíte: cama com almofadas (1618773928121)
+- O hotel: recepção com móveis de madeira (1759038085950)
+- Galeria: piscina com espreguiçadeiras (1549294413), saguão com lustre (1646991761123), fachada e jardim (1607320895054), área externa/piscina (1623718649591), cama branca (1631049552057)
+- Café da manhã: buffet (1722477936580)
 
-## Checklist de entrega ao cliente
-- [ ] Trocar o logotipo (`symbol#logo` no `index.html`) e o nome "Soneca Hotéis" pela marca do cliente.
-- [ ] Número do WhatsApp: buscar `5500900000000` e `(00) 90000-0000`.
-- [ ] Unidades (lista de destino na barra de reserva e no rodapé), endereço e link do mapa.
-- [ ] Quartos, capacidades, metragens e camas. Trocar as ilustrações por fotos reais com `<img>` quando houver.
-- [ ] Ofertas e pacotes (todos são exemplos): nomes, regras e validade.
-- [ ] Café da manhã: horário e opções reais.
-- [ ] Comodidades, políticas (check-in, check-out, cancelamento, crianças, pets) e perguntas frequentes.
-- [ ] Atrações próximas e distâncias reais.
-- [ ] Idiomas EN/ES: hoje apenas ilustrativos (desativados). Implementar ou remover.
-- [ ] Não incluir depoimentos, notas ou prêmios sem comprovação.
-- [ ] Remover a frase "Site de demonstração" do rodapé.
+## Checklist de entrega
+- [ ] Trocar nome, logotipo (`symbol#logo`) e fotos.
+- [ ] Número de WhatsApp: buscar `5500900000000` e `(00) 90000-0000`.
+- [ ] Apartamentos: metragens, capacidades e preços "a partir de" (exemplos).
+- [ ] Endereço, distâncias e mapa (substituir o bloco `.mapa` por Google Maps).
+- [ ] Políticas, horários do café, taxas de pet e FAQ.
+- [ ] Não incluir notas, avaliações ou prêmios sem comprovação.
+- [ ] Remover a barra "Proposta de demonstração" e a frase do rodapé.
 
-A barra de reserva valida entrada e saída (não aceita datas passadas nem saída igual ou anterior à entrada) e abre o WhatsApp com unidade, datas, hóspedes e código promocional. Não há sistema de reservas: a confirmação é feita pela recepção.
-
-## Arquivos
-`index.html` (conteúdo e ilustrações) · `style.css` (visual) · `script.js` (consulta de datas, WhatsApp, menu e parâmetros do link)
+A barra de reserva valida as datas (sem datas passadas, saída depois da entrada) e abre o WhatsApp com datas, noites, hóspedes e categoria.

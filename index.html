@@ -3,492 +3,312 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Soneca Hotéis | Durma bem, acorde pronto</title>
-<meta name="description" content="Soneca Hotéis: hotelaria urbana com cama de verdade, café da manhã e reserva direta. Site de demonstração.">
-<meta name="theme-color" content="#0E1B3D">
+<title>Hotel Ipê Real | Hospedagem no centro, reserva direta</title>
+<meta name="description" content="Hotel Ipê Real: 62 apartamentos, piscina, café da manhã incluso e estacionamento. Reserve direto pelo WhatsApp. Site de demonstração.">
+<meta name="theme-color" content="#1E3B36">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Sprite de ícones e formas reutilizáveis -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <!-- Logo: travesseiro-nuvem com lua e costura -->
-    <symbol id="logo" viewBox="0 0 64 56">
-      <path d="M12 8c6-4 14-3 20 0 6-3 14-4 20 0 6 4 8 12 6 20 2 8 0 16-6 20-6 4-14 3-20 0-6 3-14 4-20 0C6 44 4 36 6 28 4 20 6 12 12 8Z" fill="#F0413F"/>
-      <path d="M40 17a12 12 0 1 0 6 21 10 10 0 0 1-6-21Z" fill="#fff"/>
-      <circle cx="49" cy="20" r="2.2" fill="#FFC93C"/>
-      <path d="M13 14l3 2M51 42l-3-2M13 42l3-2" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/>
+    <symbol id="logo" viewBox="0 0 40 44">
+      <path d="M4 42V18C4 8 11 2 20 2s16 6 16 16v24" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M10 42V19c0-6 4-10 10-10s10 4 10 10v23" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".6"/>
+      <path d="M2 42h36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M20 17v14M15 22l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
-    <symbol id="pillow" viewBox="0 0 120 70">
-      <path d="M10 14C30 4 90 4 110 14c5 14 5 28 0 42-20 10-80 10-100 0-5-14-5-28 0-42Z" fill="currentColor"/>
-      <path d="M22 22c24-6 52-6 76 0" stroke="#fff" stroke-opacity=".4" stroke-width="3" stroke-linecap="round" fill="none"/>
-    </symbol>
-    <symbol id="nuvem" viewBox="0 0 120 50"><path d="M20 46a16 16 0 0 1-2-32 22 22 0 0 1 42-4 18 18 0 0 1 32 10 14 14 0 0 1-4 26Z" fill="currentColor"/></symbol>
-    <!-- Ícones (traço) -->
     <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor"/></symbol>
     <symbol id="i-cafe" viewBox="0 0 24 24"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Zm13 1h2a2.5 2.5 0 0 1 0 5h-2M8 3c-1 1 1 2 0 3m4-3c-1 1 1 2 0 3"/></symbol>
     <symbol id="i-ar" viewBox="0 0 24 24"><path d="M12 2v20M3.5 7l17 10M3.5 17l17-10M9 4l3 2 3-2M9 20l3-2 3 2"/></symbol>
-    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M8 21h8M12 17v4"/></symbol>
-    <symbol id="i-mesa" viewBox="0 0 24 24"><path d="M3 9h18v3H3zM6 12v8M18 12v8M10 15h4"/></symbol>
-    <symbol id="i-chuveiro" viewBox="0 0 24 24"><path d="M4 21V8a4 4 0 0 1 4-4h2m0 0a6 6 0 0 1 8 6H10V4Zm1 9v1m3-1v1m3-1v1m-8 3v1m3-1v1m3-1v1"/></symbol>
-    <symbol id="i-carro" viewBox="0 0 24 24"><path d="M4 16V12l2-5h12l2 5v4M3 16h18v3H3zM7 12h10"/><circle cx="7.5" cy="16" r=".8" fill="currentColor"/><circle cx="16.5" cy="16" r=".8" fill="currentColor"/></symbol>
-    <symbol id="i-pata" viewBox="0 0 24 24"><circle cx="6" cy="10" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="15" cy="6" r="2"/><circle cx="19" cy="10" r="2"/><path d="M12.5 11c3 0 5.5 3 5.5 5.5 0 2-2 2.5-3.5 2-1.2-.4-1.5-.5-2-.5s-.8.1-2 .5c-1.5.5-3.5 0-3.5-2C7 14 9.5 11 12.5 11Z"/></symbol>
-    <symbol id="i-chave" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h10v4M18 12v4"/></symbol>
-    <symbol id="i-lua" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></symbol>
-    <symbol id="i-som" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M17 4l3 16" /></symbol>
-    <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></symbol>
-    <symbol id="i-bag" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
-    <symbol id="i-metro" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="4"/><path d="M5 11h14M8 21l2-4m6 4-2-4"/><circle cx="9" cy="14" r=".8" fill="currentColor"/><circle cx="15" cy="14" r=".8" fill="currentColor"/></symbol>
-    <symbol id="i-arvore" viewBox="0 0 24 24"><path d="M12 22v-7M12 15c-4 0-6-2.500-6-5.500a6 6 0 0 1 12 0c0 3-2 5.500-6 5.500Z"/></symbol>
-    <symbol id="i-prato" viewBox="0 0 24 24"><path d="M3 20h18M5 20c0-6 3-9 7-9s7 3 7 9M12 8V5m-2 0h4"/></symbol>
-    <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="3"/><path d="M4 11h16M7 20v-3m10 3v-3"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.500 4.500 4.500L19 7.500"/></symbol>
-    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z"/><circle cx="7.500" cy="8.500" r="1.200" fill="currentColor"/></symbol>
-    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/></symbol>
-    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="i-cama" viewBox="0 0 24 24"><path d="M3 19V6M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11.500" r="2"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-piscina" viewBox="0 0 24 24"><path d="M8 14V5a2 2 0 0 1 4 0M15 14V5a2 2 0 0 1 4 0M8 9h7M3 18c2 0 2-1.5 4.5-1.5S10 18 12 18s2-1.5 4.5-1.5S19 18 21 18M3 21.5c2 0 2-1.5 4.5-1.5S10 21.5 12 21.5s2-1.5 4.5-1.5 2.5 1.5 4.5 1.5"/></symbol>
+    <symbol id="i-carro" viewBox="0 0 24 24"><path d="M4 16V12l2-5h12l2 5v4M3 16h18v3H3zM7 12h10"/></symbol>
+    <symbol id="i-pata" viewBox="0 0 24 24"><circle cx="6" cy="10" r="2"/><circle cx="10" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 3-5 5.500 0 2 2 2.5 5 1 3 1.500 5 1 5-1 0-2.500-2-5.500-5-5.500Z"/></symbol>
+    <symbol id="i-cofre" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="2"/><circle cx="12" cy="11.500" r="3"/><path d="M12 11.500l1.500-1.500M7 19v2M17 19v2"/></symbol>
+    <symbol id="i-recepcao" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.500 2"/></symbol>
+    <symbol id="i-lavanderia" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.500"/><path d="M8 6.500h1M11 6.500h1"/></symbol>
+    <symbol id="i-frigobar" viewBox="0 0 24 24"><rect x="6" y="2.500" width="12" height="19" rx="2"/><path d="M6 10h12M9 6v2M9 13v3"/></symbol>
+    <symbol id="i-reuniao" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.500"/><path d="M8 20h8M12 16v4M7 9h6M7 12h10"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.200-7-11.500a7 7 0 0 1 14 0C19 14.800 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.500a9.500 9.500 0 0 0-8.100 14.400L2.500 21.500l4.800-1.300A9.500 9.500 0 1 0 12 2.500Z" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/><path d="M8.600 7.800c.3-.5.800-.4 1.100.1l.7 1.500c.1.300 0 .6-.2.800l-.5.600c.7 1.300 1.800 2.300 3.200 3l.7-.7c.2-.2.500-.3.800-.1l1.500.8c.5.300.5.800.1 1.400-.6.900-1.500 1.200-2.600.8-3-1-5-3-6-5.800-.2-.9.100-1.700.7-2.400Z" fill="currentColor"/></symbol>
   </defs>
 </svg>
 
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<div class="topo-aviso">Proposta de demonstração: nome, preços e condições são fictícios.</div>
 
-<div class="utility">
-  <div class="wrap utility-in">
-    <span class="util-msg"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg> Reservando direto aqui, café da manhã incluso</span>
-    <nav aria-label="Atalhos">
-      <a href="#faq">Ajuda</a>
-      <a data-wa="Olá! Quero consultar ou alterar uma reserva que já fiz." href="https://wa.me/5500900000000">Minha reserva</a>
-      <span class="lang" role="group" aria-label="Idioma"><button type="button" aria-pressed="true">PT</button><button type="button" aria-pressed="false" disabled title="Exemplo: versões em outros idiomas">EN</button><button type="button" aria-pressed="false" disabled title="Exemplo: versões em outros idiomas">ES</button></span>
-    </nav>
-  </div>
-</div>
-
-<header class="site-header">
-  <div class="wrap head-in">
-    <a class="brand" href="#inicio" aria-label="Soneca Hotéis, início">
-      <svg class="logo" viewBox="0 0 64 56" aria-hidden="true"><use href="#logo"/></svg>
-      <span class="brand-name"><span data-brand>Soneca Hotéis</span></span>
+<header class="topo" id="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="#inicio" aria-label="Início">
+      <svg class="marca-ico" aria-hidden="true"><use href="#logo"/></svg>
+      <span class="marca-txt"><span data-brand>Hotel Ipê Real</span><small>Centro histórico</small></span>
     </a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="sr">Menu</span><i></i><i></i><i></i></button>
-    <nav id="menu" class="menu" aria-label="Principal">
-      <a href="#vantagens">Reservar direto</a>
-      <a href="#quartos">Quartos</a>
-      <a href="#ofertas">Ofertas</a>
-      <a href="#sono">Sono</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" aria-label="Principal">
+      <a href="#quartos">Apartamentos</a>
+      <a href="#hotel">O hotel</a>
       <a href="#cafe">Café da manhã</a>
       <a href="#local">Localização</a>
+      <a href="#politicas">Políticas</a>
       <a href="#faq">Dúvidas</a>
+      <a class="btn-wa-sm" data-wa="Olá! Gostaria de informações sobre hospedagem." href="#">Reservar</a>
     </nav>
-    <a class="btn btn-coral head-cta" data-wa="Olá! Gostaria de falar com a recepção." href="https://wa.me/5500900000000">Falar com a recepção</a>
   </div>
 </header>
 
 <main id="conteudo">
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-scene" aria-hidden="true">
-      <svg viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMax slice" role="presentation">
-        <defs>
-          <linearGradient id="g-ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E1B3D"/><stop offset=".55" stop-color="#2B3A8C"/><stop offset="1" stop-color="#F0713F"/></linearGradient>
-          <radialGradient id="g-sol" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFC93C" stop-opacity=".9"/><stop offset="1" stop-color="#FFC93C" stop-opacity="0"/></radialGradient>
-          <linearGradient id="g-parede" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16275A"/><stop offset="1" stop-color="#0E1B3D"/></linearGradient>
-        </defs>
-        <rect width="1440" height="560" fill="url(#g-parede)"/>
-        <!-- janela grande -->
-        <g transform="translate(700 40)">
-          <rect width="700" height="360" rx="24" fill="url(#g-ceu)"/>
-          <circle cx="470" cy="290" r="150" fill="url(#g-sol)"/>
-          <circle cx="470" cy="290" r="38" fill="#FFC93C"/>
-          <g fill="#fff" opacity=".85"><circle cx="90" cy="50" r="2"/><circle cx="210" cy="30" r="1.600"/><circle cx="330" cy="70" r="2"/><circle cx="560" cy="40" r="1.800"/><circle cx="640" cy="90" r="1.500"/><circle cx="150" cy="110" r="1.400"/></g>
-          <path d="M520 40a24 24 0 1 0 12 42 20 20 0 0 1-12-42Z" fill="#FFF3C4"/>
-          <use href="#nuvem" x="60" y="130" width="170" height="70" style="color:#F7A58A" opacity=".55" class="drift"/>
-          <use href="#nuvem" x="360" y="90" width="130" height="54" style="color:#F7A58A" opacity=".4" class="drift d2"/>
-          <!-- cidade -->
-          <g fill="#0B1533">
-            <rect x="0" y="250" width="60" height="110"/><rect x="60" y="210" width="50" height="150"/><rect x="110" y="270" width="70" height="90"/>
-            <rect x="180" y="190" width="56" height="170"/><rect x="236" y="240" width="64" height="120"/><rect x="300" y="220" width="46" height="140"/>
-            <rect x="346" y="280" width="80" height="80"/><rect x="426" y="230" width="52" height="130"/><rect x="478" y="260" width="70" height="100"/>
-            <rect x="548" y="200" width="60" height="160"/><rect x="608" y="250" width="92" height="110"/>
-          </g>
-          <g fill="#FFC93C" opacity=".85">
-            <rect x="72" y="224" width="6" height="8"/><rect x="90" y="246" width="6" height="8"/><rect x="194" y="206" width="6" height="8"/><rect x="212" y="236" width="6" height="8"/>
-            <rect x="196" y="270" width="6" height="8"/><rect x="250" y="260" width="6" height="8"/><rect x="312" y="240" width="6" height="8"/><rect x="438" y="250" width="6" height="8"/>
-            <rect x="560" y="220" width="6" height="8"/><rect x="580" y="250" width="6" height="8"/><rect x="620" y="270" width="6" height="8"/><rect x="20" y="276" width="6" height="8"/>
-          </g>
-          <rect x="0" y="0" width="700" height="360" rx="24" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="10"/>
-          <path d="M350 0v360M0 180h700" stroke="#fff" stroke-opacity=".9" stroke-width="6"/>
-        </g>
-        <!-- cortina -->
-        <path d="M660 30c40 40 30 120 0 180s-30 130 10 190H600V30Z" fill="#2BB5A0"/>
-        <path d="M640 30c24 60 14 130-6 190" stroke="#fff" stroke-opacity=".2" stroke-width="4" fill="none"/>
-        <!-- cabeceira e cama -->
-        <rect x="620" y="360" width="820" height="200" fill="#0A1230"/>
-        <rect x="660" y="330" width="760" height="150" rx="40" fill="#1F3278"/>
-        <rect x="640" y="440" width="800" height="150" rx="26" fill="#fff"/>
-        <path d="M640 480h800v110H640z" fill="#F2F4F9"/>
-        <path d="M640 500h800v22H640z" fill="#F0413F"/>
-        <rect x="700" y="372" width="200" height="86" rx="34" fill="#fff"/>
-        <rect x="920" y="372" width="200" height="86" rx="34" fill="#FFE1DC"/>
-        <rect x="1140" y="386" width="170" height="72" rx="30" fill="#BFEDE5"/>
-        <path d="M720 392c40-8 120-8 160 0M940 392c40-8 120-8 160 0" stroke="#0E1B3D" stroke-opacity=".08" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <!-- abajur -->
-        <rect x="1330" y="440" width="110" height="10" fill="#0A1230"/>
-        <path d="M1385 440v-50" stroke="#FFC93C" stroke-width="5"/>
-        <path d="M1355 392l14-40h32l14 40Z" fill="#FFC93C"/>
-        <circle cx="1385" cy="352" r="70" fill="url(#g-sol)" opacity=".6"/>
-        <!-- tapete -->
-        <ellipse cx="500" cy="548" rx="360" ry="22" fill="#F0413F" opacity=".9"/>
-      </svg>
+
+<section class="hero" id="inicio">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1551016043-06ec2173531b?auto=format&fit=crop&w=1800&q=70" width="1800" height="1100" alt="Fachada de hotel durante o dia">
+  <div class="hero-veu"></div>
+  <div class="wrap hero-in">
+    <h1>Hospede-se no coração da cidade, com piscina e café da manhã incluso</h1>
+    <p class="hero-sub">62 apartamentos a poucos minutos a pé da praça central e dos passeios. Estacionamento no local e reserva direta pelo WhatsApp, sem intermediários.</p>
+
+    <form class="reserva" id="reserva" novalidate aria-label="Consultar disponibilidade">
+      <div class="campo">
+        <label for="entrada">Entrada</label>
+        <input type="date" id="entrada" name="entrada" required>
+      </div>
+      <div class="campo">
+        <label for="saida">Saída</label>
+        <input type="date" id="saida" name="saida" required>
+      </div>
+      <div class="campo">
+        <label for="hospedes">Hóspedes</label>
+        <select id="hospedes" name="hospedes">
+          <option value="1">1 hóspede</option>
+          <option value="2" selected>2 hóspedes</option>
+          <option value="3">3 hóspedes</option>
+          <option value="4">4 hóspedes</option>
+          <option value="5">5 ou mais</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="quarto">Apartamento</label>
+        <select id="quarto" name="quarto">
+          <option value="">Qualquer categoria</option>
+          <option>Standard</option>
+          <option>Superior</option>
+          <option>Família</option>
+          <option>Suíte</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-wa"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Consultar no WhatsApp</button>
+      <p id="err" class="err" role="alert" hidden></p>
+    </form>
+  </div>
+</section>
+
+<section class="fatos" aria-label="Resumo">
+  <ul class="wrap fatos-in">
+    <li><strong>Check-in a partir das 14h</strong><span>Check-out até as 12h</span></li>
+    <li><strong>Café da manhã incluso</strong><span>Todos os dias, das 6h30 às 10h</span></li>
+    <li><strong>Estacionamento gratuito</strong><span>Sujeito à disponibilidade de vagas</span></li>
+    <li><strong>Recepção 24 horas</strong><span>Atendimento também por WhatsApp</span></li>
+  </ul>
+</section>
+
+<section class="sec" id="quartos">
+  <div class="wrap">
+    <div class="sec-cab">
+      <h2>Apartamentos</h2>
+      <p>Quatro categorias, todas com ar-condicionado, TV, Wi-Fi e banheiro privativo. Valores de exemplo para diária de duas pessoas com café da manhã.</p>
     </div>
 
-    <div class="wrap hero-in">
-      <p class="eyebrow eyebrow-on-dark"><svg class="ic" aria-hidden="true"><use href="#i-lua"/></svg> Hotelaria urbana, sem complicação</p>
-      <h1>Durma bem.<br>Acorde <em>pronto</em> pro dia.</h1>
-      <p class="lede">Cama de verdade, café da manhã incluso e o melhor preço quando você reserva direto com a gente.</p>
-    </div>
+    <div class="quartos">
+      <article class="quarto">
+        <div class="foto"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=70" width="900" height="640" loading="lazy" alt="Apartamento Standard com cama de casal e roupa de cama branca"></div>
+        <div class="quarto-txt">
+          <h3>Standard</h3>
+          <ul class="ficha"><li>22 m²</li><li>Até 2 hóspedes</li><li>1 cama de casal ou 2 de solteiro</li></ul>
+          <p>Prático e silencioso, voltado para o pátio interno. Mesa de trabalho e frigobar.</p>
+          <div class="preco"><span>a partir de</span><strong>R$ 289</strong><span>/ diária</span></div>
+          <a class="link-wa" data-wa="Olá! Gostaria de consultar o apartamento Standard." href="#">Consultar este apartamento</a>
+        </div>
+      </article>
 
-    <div class="wrap">
-      <form class="booking" id="reserva" novalidate aria-label="Reservar hospedagem">
-        <div class="field field-wide">
-          <label for="unidade"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg> Destino</label>
-          <select id="unidade" name="unidade">
-            <option>Soneca Centro</option>
-            <option>Soneca Estação</option>
-            <option>Soneca Parque</option>
-            <option>Soneca Aeroporto</option>
-          </select>
+      <article class="quarto">
+        <div class="foto"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=70" width="900" height="640" loading="lazy" alt="Apartamento Superior com cama de madeira e vista para o jardim"></div>
+        <div class="quarto-txt">
+          <h3>Superior</h3>
+          <ul class="ficha"><li>28 m²</li><li>Até 3 hóspedes</li><li>Cama de casal e sofá-cama</li></ul>
+          <p>Andar alto com vista para o jardim, varanda pequena e cofre digital.</p>
+          <div class="preco"><span>a partir de</span><strong>R$ 359</strong><span>/ diária</span></div>
+          <a class="link-wa" data-wa="Olá! Gostaria de consultar o apartamento Superior." href="#">Consultar este apartamento</a>
         </div>
-        <div class="field">
-          <label for="entrada">Entrada</label>
-          <input type="date" id="entrada" name="entrada" required>
-        </div>
-        <div class="field">
-          <label for="saida">Saída</label>
-          <input type="date" id="saida" name="saida" required>
-        </div>
-        <div class="field">
-          <label for="hospedes">Hóspedes</label>
-          <select id="hospedes" name="hospedes">
-            <option value="1">1 hóspede</option><option value="2" selected>2 hóspedes</option><option value="3">3 hóspedes</option><option value="4">4 hóspedes</option><option value="5">5 hóspedes</option><option value="6">6 hóspedes</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="promo">Código promo <small>(opcional)</small></label>
-          <input type="text" id="promo" name="promo" placeholder="Ex.: SONECA10" autocomplete="off" maxlength="24">
-        </div>
-        <button class="btn btn-coral btn-lg" type="submit">Ver disponibilidade</button>
-        <p class="error" id="err" role="alert" hidden></p>
-        <p class="booking-note">A consulta abre o WhatsApp da recepção com os dados prontos. Não há cobrança neste passo.</p>
-      </form>
-    </div>
-  </section>
+      </article>
 
-  <!-- POR QUE RESERVAR DIRETO -->
-  <section class="block" id="vantagens">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Reserva direta</p>
-        <h2>Por que reservar direto com a Soneca</h2>
-        <p class="sec-sub">Quando você fala com a gente, ninguém fica no meio do caminho.</p>
-      </header>
-      <ul class="cards4">
-        <li class="adv c-coral"><span class="adv-ic"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg></span><h3>Melhor tarifa</h3><p>Preço direto da casa, sem taxa de intermediário.</p></li>
-        <li class="adv c-mint"><span class="adv-ic"><svg class="ic" aria-hidden="true"><use href="#i-cafe"/></svg></span><h3>Café incluso</h3><p>O café da manhã vem na diária, sem cobrança extra.</p></li>
-        <li class="adv c-sun"><span class="adv-ic"><svg class="ic" aria-hidden="true"><use href="#i-relogio"/></svg></span><h3>Saída tardia</h3><p>Peça mais tempo no quarto, sujeito à disponibilidade do dia.</p></li>
-        <li class="adv c-navy"><span class="adv-ic"><svg class="ic" aria-hidden="true"><use href="#i-msg"/></svg></span><h3>Atendimento humano</h3><p>Alterações e dúvidas direto com a recepção, pelo WhatsApp.</p></li>
+      <article class="quarto">
+        <div class="foto"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=70" width="900" height="640" loading="lazy" alt="Apartamento Família com camas e cabeceira de madeira"></div>
+        <div class="quarto-txt">
+          <h3>Família</h3>
+          <ul class="ficha"><li>36 m²</li><li>Até 4 hóspedes</li><li>Cama de casal e 2 de solteiro</li></ul>
+          <p>Ambiente amplo para quem viaja com crianças, com dois espaços de descanso.</p>
+          <div class="preco"><span>a partir de</span><strong>R$ 459</strong><span>/ diária</span></div>
+          <a class="link-wa" data-wa="Olá! Gostaria de consultar o apartamento Família." href="#">Consultar este apartamento</a>
+        </div>
+      </article>
+
+      <article class="quarto">
+        <div class="foto"><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=70" width="900" height="640" loading="lazy" alt="Suíte com cama king e almofadas"></div>
+        <div class="quarto-txt">
+          <h3>Suíte</h3>
+          <ul class="ficha"><li>42 m²</li><li>Até 3 hóspedes</li><li>Cama king e sala de estar</li></ul>
+          <p>Sala separada, banheira e vista para a piscina. Indicada para estadias mais longas.</p>
+          <div class="preco"><span>a partir de</span><strong>R$ 589</strong><span>/ diária</span></div>
+          <a class="link-wa" data-wa="Olá! Gostaria de consultar a Suíte." href="#">Consultar este apartamento</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-areia" id="hotel">
+  <div class="wrap duas">
+    <div class="duas-txt">
+      <h2>Um hotel de porte médio, com atendimento próximo</h2>
+      <p>O Ipê Real ocupa um prédio de cinco andares reformado, com recepção ampla, piscina no térreo e salas para pequenos eventos. É a escolha de casais, famílias e viajantes a trabalho que querem ficar perto de tudo sem abrir mão de sossego.</p>
+      <p>Você combina datas, categoria e forma de pagamento direto com a recepção, pelo WhatsApp. Sem taxa de intermediação e com o mesmo valor que aparece neste site.</p>
+      <a class="btn btn-wa" data-wa="Olá! Gostaria de reservar direto com o hotel." href="#"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Falar com a recepção</a>
+    </div>
+    <div class="duas-foto"><img src="https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?auto=format&fit=crop&w=1000&q=70" width="1000" height="1100" loading="lazy" alt="Recepção do hotel com móveis de madeira e área de espera"></div>
+  </div>
+</section>
+
+<section class="sec" id="comodidades">
+  <div class="wrap">
+    <div class="sec-cab"><h2>Comodidades</h2></div>
+    <ul class="como">
+      <li><svg class="ico" aria-hidden="true"><use href="#i-piscina"/></svg>Piscina com espreguiçadeiras</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-cafe"/></svg>Café da manhã incluso</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>Wi-Fi em todo o hotel</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-carro"/></svg>Estacionamento no local</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ar"/></svg>Ar-condicionado</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-tv"/></svg>TV a cabo</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-frigobar"/></svg>Frigobar nos apartamentos</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-cofre"/></svg>Cofre digital</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-recepcao"/></svg>Recepção 24 horas</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-lavanderia"/></svg>Lavanderia (serviço pago)</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-reuniao"/></svg>Sala de reuniões</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-pata"/></svg>Aceita pets de pequeno porte</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec-verde" id="galeria">
+  <div class="wrap">
+    <div class="sec-cab"><h2>Conheça os ambientes</h2></div>
+    <div class="galeria">
+      <figure class="g1"><img src="https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&w=1100&q=70" width="1100" height="780" loading="lazy" alt="Piscina cercada por palmeiras e espreguiçadeiras de madeira"><figcaption>Piscina</figcaption></figure>
+      <figure class="g2"><img src="https://images.unsplash.com/photo-1646991761123-d83ce47c30c9?auto=format&fit=crop&w=800&q=70" width="800" height="600" loading="lazy" alt="Saguão do hotel com sofás e lustre"><figcaption>Saguão</figcaption></figure>
+      <figure class="g3"><img src="https://images.unsplash.com/photo-1607320895054-c5c543e9a069?auto=format&fit=crop&w=800&q=70" width="800" height="600" loading="lazy" alt="Edifício branco cercado por gramado"><figcaption>Fachada e jardim</figcaption></figure>
+      <figure class="g4"><img src="https://images.unsplash.com/photo-1623718649591-311775a30c43?auto=format&fit=crop&w=800&q=70" width="800" height="600" loading="lazy" alt="Piscina com palmeiras durante o dia"><figcaption>Área externa</figcaption></figure>
+      <figure class="g5"><img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?auto=format&fit=crop&w=800&q=70" width="800" height="600" loading="lazy" alt="Cama com roupa de cama branca"><figcaption>Apartamento</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="cafe">
+  <div class="wrap duas inversa">
+    <div class="duas-foto"><img src="https://images.unsplash.com/photo-1722477936580-84aa10762b0b?auto=format&fit=crop&w=1000&q=70" width="1000" height="760" loading="lazy" alt="Buffet de café da manhã com pratos variados"></div>
+    <div class="duas-txt">
+      <h2>Café da manhã incluso na diária</h2>
+      <p>Servido em buffet todos os dias, das 6h30 às 10h (aos domingos e feriados, até as 10h30). Pães e bolos da casa, frios, ovos na hora, frutas, cereais, iogurtes, sucos e café.</p>
+      <ul class="lista">
+        <li>Opções sem lactose e sem glúten mediante aviso na reserva</li>
+        <li>Crianças até 5 anos não pagam o café</li>
+        <li>Café reforçado no quarto para quem sai cedo (mediante pedido na véspera)</li>
       </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- QUARTOS -->
-  <section class="block block-fog" id="quartos">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Quartos</p>
-        <h2>O quarto certo pro seu jeito de viajar</h2>
-        <p class="sec-sub">Metragens, camas e capacidades são exemplos. Ajuste para o hotel real.</p>
-      </header>
-      <div class="rooms">
-        <article class="room">
-          <svg class="room-art" viewBox="0 0 400 260" role="img" aria-label="Ilustração do quarto Standard: cama de casal com travesseiros e janela">
-            <rect width="400" height="260" fill="#DDF3EF"/>
-            <rect x="0" y="190" width="400" height="70" fill="#C3E8E1"/>
-            <rect x="240" y="30" width="120" height="110" rx="14" fill="#0E1B3D"/><rect x="240" y="30" width="120" height="110" rx="14" fill="#F7A58A" opacity=".35"/><circle cx="330" cy="110" r="16" fill="#FFC93C"/><path d="M300 30v110M240 85h120" stroke="#fff" stroke-width="5"/><rect x="240" y="30" width="120" height="110" rx="14" fill="none" stroke="#fff" stroke-width="7"/>
-            <rect x="40" y="110" width="190" height="60" rx="18" fill="#2BB5A0"/>
-            <rect x="30" y="150" width="210" height="62" rx="16" fill="#fff"/>
-            <rect x="30" y="176" width="210" height="14" fill="#F0413F"/>
-            <rect x="30" y="206" width="14" height="22" rx="4" fill="#0E1B3D"/><rect x="226" y="206" width="14" height="22" rx="4" fill="#0E1B3D"/>
-            <use href="#pillow" x="52" y="124" width="72" height="42" style="color:#fff"/><use href="#pillow" x="130" y="124" width="72" height="42" style="color:#FFE1DC"/>
-            <rect x="262" y="176" width="34" height="34" rx="6" fill="#0E1B3D"/><rect x="270" y="150" width="18" height="24" rx="3" fill="#FFC93C"/>
-          </svg>
-          <div class="room-body">
-            <h3>Standard</h3>
-            <p class="room-meta">Cama de casal ou duas de solteiro · 1 a 2 hóspedes · cerca de 16 m²</p>
-            <ul class="tags"><li>Ar-condicionado</li><li>Wi-Fi</li><li>TV</li></ul>
-            <a class="btn btn-ghost" data-wa="Olá! Gostaria de consultar o quarto Standard." href="https://wa.me/5500900000000">Consultar este quarto</a>
-          </div>
-        </article>
-        <article class="room">
-          <svg class="room-art" viewBox="0 0 400 260" role="img" aria-label="Ilustração do quarto Superior: cama grande, mesa de trabalho e poltrona">
-            <rect width="400" height="260" fill="#FFE9E5"/>
-            <rect x="0" y="190" width="400" height="70" fill="#FFD2CB"/>
-            <rect x="26" y="40" width="96" height="90" rx="14" fill="#0E1B3D"/><circle cx="96" cy="100" r="14" fill="#FFC93C"/><path d="M74 40v90M26 85h96" stroke="#fff" stroke-width="5"/><rect x="26" y="40" width="96" height="90" rx="14" fill="none" stroke="#fff" stroke-width="7"/>
-            <rect x="150" y="100" width="230" height="70" rx="20" fill="#0E1B3D"/>
-            <rect x="140" y="146" width="250" height="66" rx="18" fill="#fff"/>
-            <rect x="140" y="174" width="250" height="16" fill="#2BB5A0"/>
-            <rect x="140" y="206" width="14" height="22" rx="4" fill="#0E1B3D"/><rect x="376" y="206" width="14" height="22" rx="4" fill="#0E1B3D"/>
-            <use href="#pillow" x="160" y="116" width="76" height="44" style="color:#fff"/><use href="#pillow" x="244" y="116" width="76" height="44" style="color:#F0413F"/><use href="#pillow" x="320" y="124" width="56" height="36" style="color:#FFE1DC"/>
-            <rect x="30" y="170" width="86" height="8" rx="3" fill="#0E1B3D"/><rect x="38" y="178" width="6" height="40" fill="#0E1B3D"/><rect x="102" y="178" width="6" height="40" fill="#0E1B3D"/>
-            <rect x="52" y="146" width="40" height="24" rx="3" fill="#2BB5A0"/>
-          </svg>
-          <div class="room-body">
-            <h3>Superior</h3>
-            <p class="room-meta">Cama king ou queen · 1 a 3 hóspedes · cerca de 22 m²</p>
-            <ul class="tags"><li>Mesa de trabalho</li><li>Blackout</li><li>Frigobar</li></ul>
-            <a class="btn btn-ghost" data-wa="Olá! Gostaria de consultar o quarto Superior." href="https://wa.me/5500900000000">Consultar este quarto</a>
-          </div>
-        </article>
-        <article class="room">
-          <svg class="room-art" viewBox="0 0 400 260" role="img" aria-label="Ilustração do quarto Família: cama de casal e duas camas de solteiro">
-            <rect width="400" height="260" fill="#FFF3CF"/>
-            <rect x="0" y="190" width="400" height="70" fill="#FFE59A"/>
-            <rect x="150" y="26" width="100" height="84" rx="14" fill="#0E1B3D"/><circle cx="224" cy="86" r="14" fill="#FFC93C"/><path d="M200 26v84M150 68h100" stroke="#fff" stroke-width="5"/><rect x="150" y="26" width="100" height="84" rx="14" fill="none" stroke="#fff" stroke-width="7"/>
-            <rect x="20" y="120" width="150" height="50" rx="16" fill="#F0413F"/><rect x="14" y="150" width="162" height="56" rx="14" fill="#fff"/><rect x="14" y="176" width="162" height="12" fill="#0E1B3D"/>
-            <use href="#pillow" x="30" y="128" width="62" height="36" style="color:#fff"/><use href="#pillow" x="98" y="128" width="62" height="36" style="color:#FFE1DC"/>
-            <rect x="232" y="130" width="150" height="44" rx="14" fill="#2BB5A0"/><rect x="226" y="156" width="162" height="48" rx="12" fill="#fff"/><rect x="226" y="180" width="162" height="10" fill="#FFC93C"/>
-            <use href="#pillow" x="238" y="134" width="56" height="32" style="color:#BFEDE5"/>
-            <rect x="232" y="200" width="150" height="0" fill="none"/>
-            <rect x="198" y="188" width="22" height="22" rx="5" fill="#0E1B3D"/>
-          </svg>
-          <div class="room-body">
-            <h3>Família</h3>
-            <p class="room-meta">Cama de casal + solteiro(s) · 3 a 5 hóspedes · cerca de 28 m²</p>
-            <ul class="tags"><li>Espaço extra</li><li>Frigobar</li><li>Berço sob consulta</li></ul>
-            <a class="btn btn-ghost" data-wa="Olá! Gostaria de consultar o quarto Família." href="https://wa.me/5500900000000">Consultar este quarto</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFERTAS -->
-  <section class="block" id="ofertas">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Ofertas</p>
-        <h2>Pacotes para cada tipo de estadia</h2>
-        <p class="sec-sub">Pacotes e condições de exemplo, para o hotel editar.</p>
-      </header>
-      <div class="offers">
-        <article class="offer o-coral">
-          <svg class="offer-art" viewBox="0 0 300 120" aria-hidden="true"><use href="#nuvem" x="150" y="10" width="140" height="58" style="color:#fff" opacity=".25"/><use href="#pillow" x="30" y="40" width="120" height="70" style="color:#fff"/><path d="M80 70a14 14 0 1 0 8 25 11 11 0 0 1-8-25Z" fill="#F0413F"/></svg>
-          <h3>Noite extra</h3>
-          <p>Ficou com gosto de quero mais? Na segunda noite consecutiva, condição especial na diária.</p>
-          <a class="offer-link" data-wa="Olá! Tenho interesse no pacote Noite extra." href="https://wa.me/5500900000000">Quero esta oferta</a>
-        </article>
-        <article class="offer o-mint">
-          <svg class="offer-art" viewBox="0 0 300 120" aria-hidden="true"><circle cx="220" cy="46" r="26" fill="#FFC93C"/><path d="M40 100h200M60 100c0-24 14-38 40-38s40 14 40 38" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="150" y="70" width="70" height="30" rx="12" fill="#fff" opacity=".9"/></svg>
-          <h3>Fim de semana</h3>
-          <p>Sexta a domingo com café da manhã e saída tardia sob consulta.</p>
-          <a class="offer-link" data-wa="Olá! Tenho interesse no pacote Fim de semana." href="https://wa.me/5500900000000">Quero esta oferta</a>
-        </article>
-        <article class="offer o-sun">
-          <svg class="offer-art" viewBox="0 0 300 120" aria-hidden="true"><rect x="60" y="44" width="110" height="64" rx="12" fill="#0E1B3D"/><rect x="72" y="56" width="86" height="38" rx="6" fill="#2BB5A0"/><rect x="40" y="108" width="150" height="8" rx="4" fill="#0E1B3D"/><use href="#pillow" x="190" y="50" width="80" height="48" style="color:#fff"/></svg>
-          <h3>Viagem a trabalho</h3>
-          <p>Mesa, Wi-Fi estável e café cedo. Faturamento para empresas sob consulta.</p>
-          <a class="offer-link" data-wa="Olá! Tenho interesse no pacote Viagem a trabalho." href="https://wa.me/5500900000000">Quero esta oferta</a>
-        </article>
-        <article class="offer o-navy">
-          <svg class="offer-art" viewBox="0 0 300 120" aria-hidden="true"><circle cx="90" cy="46" r="14" fill="#FFC93C"/><circle cx="130" cy="52" r="11" fill="#F0413F"/><circle cx="162" cy="58" r="9" fill="#2BB5A0"/><path d="M60 112c0-26 14-40 30-40s30 14 30 40M112 112c0-20 10-30 20-30s20 10 20 30M148 112c0-14 6-22 14-22s14 8 14 22" fill="#fff" opacity=".9"/></svg>
-          <h3>Família no quarto</h3>
-          <p>Crianças até a idade definida pelo hotel não pagam, usando a cama já existente.</p>
-          <a class="offer-link" data-wa="Olá! Tenho interesse no pacote Família no quarto." href="https://wa.me/5500900000000">Quero esta oferta</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOA NOITE DE SONO -->
-  <section class="block sleep" id="sono">
-    <div class="sleep-bg" aria-hidden="true">
-      <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice"><g fill="#fff" opacity=".7"><circle cx="120" cy="60" r="2"/><circle cx="360" cy="120" r="1.600"/><circle cx="700" cy="50" r="2"/><circle cx="1000" cy="110" r="1.800"/><circle cx="1280" cy="60" r="2"/><circle cx="1380" cy="200" r="1.500"/><circle cx="220" cy="240" r="1.400"/></g><path d="M1180 70a38 38 0 1 0 20 68 32 32 0 0 1-20-68Z" fill="#FFF3C4" opacity=".9"/><use href="#nuvem" x="60" y="380" width="360" height="150" style="color:#1B2D6B"/><use href="#nuvem" x="980" y="400" width="420" height="170" style="color:#1B2D6B"/></svg>
-    </div>
-    <div class="wrap sleep-in">
-      <header class="sec-head sec-dark">
-        <p class="eyebrow eyebrow-on-dark"><svg class="ic" aria-hidden="true"><use href="#i-lua"/></svg> Boa noite de sono</p>
-        <h2>A gente leva o seu sono a sério</h2>
-        <p class="sec-sub">Viagem boa começa na cama. Estes são os cuidados que a Soneca se propõe a ter.</p>
-      </header>
-      <ul class="sleep-grid">
-        <li><svg class="ic" aria-hidden="true"><use href="#i-cama"/></svg><h3>Colchão firme e macio</h3><p>Colchão de qualidade, lençóis claros e travesseiros em dois níveis de altura.</p></li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-lua"/></svg><h3>Blackout de verdade</h3><p>Cortinas que escurecem o quarto, para dormir mesmo de dia, se for o caso.</p></li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-som"/></svg><h3>Silêncio</h3><p>Janelas com vedação acústica e andares tranquilos, longe de elevador e gelo.</p></li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-ar"/></svg><h3>Temperatura certa</h3><p>Ar-condicionado individual, para você escolher o clima do seu sono.</p></li>
-      </ul>
-      <p class="sleep-cta">Quer um travesseiro diferente? <a data-wa="Olá! Gostaria de pedir um travesseiro diferente para a minha estadia." href="https://wa.me/5500900000000">Peça na reserva</a>, sujeito à disponibilidade.</p>
-    </div>
-  </section>
-
-  <!-- CAFÉ DA MANHÃ -->
-  <section class="block" id="cafe">
-    <div class="wrap split">
-      <div class="split-art">
-        <svg viewBox="0 0 440 360" role="img" aria-label="Ilustração de mesa de café da manhã com xícara, pães, frutas e suco">
-          <rect width="440" height="360" rx="28" fill="#FFF3CF"/>
-          <circle cx="360" cy="70" r="46" fill="#FFC93C"/><g stroke="#FFC93C" stroke-width="6" stroke-linecap="round"><path d="M360 6v10M360 124v10M296 70h10M414 70h10M314 24l7 7M399 109l7 7M406 24l-7 7M321 109l-7 7"/></g>
-          <rect y="250" width="440" height="110" rx="0" fill="#F0413F"/><path d="M0 250h440" stroke="#fff" stroke-width="6"/>
-          <g fill="#fff" opacity=".25"><rect x="0" y="266" width="440" height="10"/><rect x="0" y="296" width="440" height="10"/><rect x="0" y="326" width="440" height="10"/></g>
-          <ellipse cx="130" cy="262" rx="100" ry="22" fill="#fff"/>
-          <path d="M80 200c0-30 20-48 50-48s50 18 50 48v22H80Z" fill="#E9A15A"/><path d="M104 170c10-8 22-10 36-6M96 192c14-10 30-12 50-6" stroke="#fff" stroke-opacity=".5" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <rect x="232" y="196" width="80" height="62" rx="18" fill="#fff"/><path d="M312 212h12a14 14 0 0 1 0 28h-12" stroke="#fff" stroke-width="8" fill="none"/><rect x="238" y="202" width="68" height="14" rx="7" fill="#7A4A2B"/>
-          <path d="M254 186c-6-8 6-12 0-22m22 22c-6-8 6-12 0-22" stroke="#0E1B3D" stroke-opacity=".35" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <rect x="336" y="170" width="52" height="88" rx="14" fill="#fff" opacity=".9"/><rect x="342" y="190" width="40" height="62" rx="8" fill="#FFA43C"/>
-          <circle cx="60" cy="300" r="22" fill="#2BB5A0"/><circle cx="104" cy="308" r="18" fill="#FFC93C"/><circle cx="144" cy="302" r="20" fill="#fff"/>
-        </svg>
-      </div>
-      <div class="split-txt">
-        <p class="eyebrow">Café da manhã</p>
-        <h2>Comece o dia com a mesa posta</h2>
-        <p>O café da manhã já está na diária. Pães, frutas, ovos, frios, bolos, café, leite e sucos, servidos em horário amplo para quem madruga e para quem dorme um pouco mais.</p>
-        <ul class="checks">
-          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Horário de exemplo: 6h às 10h30, todos os dias</li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Opções sem lactose e vegetarianas sob consulta</li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Kit para viagem para quem sai antes de abrir</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMODIDADES -->
-  <section class="block block-fog" id="comodidades">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Comodidades</p>
-        <h2>O que já vem com a sua estadia</h2>
-      </header>
-      <ul class="amen">
-        <li><svg class="ic" aria-hidden="true"><use href="#i-wifi"/></svg>Wi-Fi grátis</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-cafe"/></svg>Café da manhã</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-ar"/></svg>Ar-condicionado</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-tv"/></svg>TV a cabo</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-mesa"/></svg>Mesa de trabalho</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-chuveiro"/></svg>Chuveiro forte</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-carro"/></svg>Estacionamento</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-pata"/></svg>Pet friendly*</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-chave"/></svg>Recepção 24 h</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg>Guarda-volumes</li>
-      </ul>
-      <p class="fine">* Comodidades de exemplo. Política de pets e vagas variam por unidade.</p>
-    </div>
-  </section>
-
-  <!-- LOCALIZAÇÃO -->
-  <section class="block" id="local">
-    <div class="wrap split split-rev">
-      <div class="split-txt">
-        <p class="eyebrow">Localização</p>
-        <h2>No meio do que você veio fazer</h2>
-        <p>Unidades perto de transporte, comércio e pontos de interesse da cidade. Distâncias abaixo são exemplos.</p>
-        <ul class="near">
-          <li><svg class="ic" aria-hidden="true"><use href="#i-metro"/></svg><span><strong>Estação de metrô ou trem</strong>Cerca de 300 m</span></li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-bus"/></svg><span><strong>Rodoviária</strong>Cerca de 5 min de carro</span></li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-arvore"/></svg><span><strong>Parque da cidade</strong>Cerca de 10 min a pé</span></li>
-          <li><svg class="ic" aria-hidden="true"><use href="#i-prato"/></svg><span><strong>Restaurantes e padarias</strong>No quarteirão</span></li>
-        </ul>
-      </div>
-      <div class="split-art">
-        <svg viewBox="0 0 440 360" role="img" aria-label="Ilustração de mapa estilizado com ruas, parque, estação e o hotel marcado">
-          <rect width="440" height="360" rx="28" fill="#E9F6F3"/>
-          <path d="M0 250C80 230 130 270 220 240s150-40 220-10v130H0Z" fill="#BFEDE5"/>
-          <rect x="300" y="40" width="110" height="90" rx="22" fill="#9ADBB4"/><circle cx="330" cy="70" r="12" fill="#6CC28F"/><circle cx="366" cy="92" r="14" fill="#6CC28F"/>
-          <g stroke="#fff" stroke-width="16" stroke-linecap="round" fill="none"><path d="M-10 120h460"/><path d="M110-10v380"/><path d="M-10 300l460-120"/></g>
-          <g stroke="#CFD6E6" stroke-width="3" stroke-dasharray="10 12" fill="none"><path d="M-10 120h460"/><path d="M110-10v380"/></g>
-          <rect x="150" y="140" width="64" height="36" rx="10" fill="#0E1B3D"/>
-          <g transform="translate(210 150)"><path d="M0 0c-26-30-40-48-40-70a40 40 0 0 1 80 0c0 22-14 40-40 70Z" fill="#F0413F"/><circle cy="-70" r="24" fill="#fff"/><use href="#logo" x="-15" y="-84" width="30" height="26"/></g>
-          <rect x="40" y="170" width="40" height="40" rx="12" fill="#0E1B3D"/><path d="M50 190h20M52 182h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- POLÍTICAS -->
-  <section class="block block-fog" id="politicas">
-    <div class="wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Políticas</p>
-        <h2>Regras claras, sem letra miúda</h2>
-        <p class="sec-sub">Horários e condições de exemplo. Cada hotel define as suas.</p>
-      </header>
-      <dl class="pol">
-        <div><dt>Check-in</dt><dd>A partir das 14h</dd></div>
-        <div><dt>Check-out</dt><dd>Até as 12h</dd></div>
-        <div><dt>Cancelamento</dt><dd>Gratuito até 48 h antes da entrada, conforme a tarifa</dd></div>
-        <div><dt>Crianças</dt><dd>Regra de gratuidade por idade definida pelo hotel</dd></div>
-        <div><dt>Pets</dt><dd>Aceitos em unidades indicadas, com porte e taxa a confirmar</dd></div>
-        <div><dt>Pagamento</dt><dd>Cartão, Pix ou faturamento para empresas</dd></div>
+<section class="sec sec-areia" id="local">
+  <div class="wrap duas">
+    <div class="duas-txt">
+      <h2>Localização</h2>
+      <p>Av. das Palmeiras, 480, Centro. Esquina com a rua dos Ipês, em frente ao ponto de ônibus. As distâncias abaixo são exemplos e devem ser ajustadas ao endereço real do hotel.</p>
+      <dl class="dist">
+        <div><dt>Praça central e restaurantes</dt><dd>400 m</dd></div>
+        <div><dt>Rodoviária</dt><dd>1,2 km</dd></div>
+        <div><dt>Mirante e centro histórico</dt><dd>3 km</dd></div>
+        <div><dt>Shopping</dt><dd>4 km</dd></div>
+        <div><dt>Aeroporto</dt><dd>18 km</dd></div>
       </dl>
+      <p class="nota"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Traslado do aeroporto sob consulta, com valor combinado antes da chegada.</span></p>
     </div>
-  </section>
+    <div class="mapa" role="img" aria-label="Espaço reservado para o mapa do hotel">
+      <svg viewBox="0 0 400 320" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="320" fill="#E6DFD0"/>
+        <path d="M-10 90 L410 60 M-10 200 L410 230 M120 -10 L150 330 M290 -10 L260 330" stroke="#FAF7F0" stroke-width="14" fill="none"/>
+        <path d="M-10 150 L410 140" stroke="#FAF7F0" stroke-width="7" fill="none"/>
+        <rect x="170" y="100" width="70" height="40" fill="#C9D3CB"/>
+        <circle cx="205" cy="148" r="14" fill="#1E3B36"/>
+        <circle cx="205" cy="148" r="5" fill="#F5F0E7"/>
+      </svg>
+      <span>Mapa do cliente (inserir Google Maps)</span>
+    </div>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="block" id="faq">
-    <div class="wrap faq-wrap">
-      <header class="sec-head">
-        <p class="eyebrow">Dúvidas</p>
-        <h2>Perguntas frequentes</h2>
-      </header>
-      <div class="faq">
-        <details><summary>Como reservo direto?</summary><p>Escolha unidade, datas e hóspedes na barra de reserva e toque em Ver disponibilidade. A recepção responde pelo WhatsApp com as opções.</p></details>
-        <details><summary>O café da manhã está incluso?</summary><p>Nas tarifas com café, sim. As condições de exemplo desta página incluem o café na diária.</p></details>
-        <details><summary>Posso alterar ou cancelar minha reserva?</summary><p>Sim. Use o atalho Minha reserva, no topo, e fale com a recepção. Prazos e regras seguem a tarifa contratada.</p></details>
-        <details><summary>Posso fazer check-in mais cedo ou check-out mais tarde?</summary><p>Peça com antecedência. Atendemos conforme a ocupação do dia.</p></details>
-        <details><summary>Aceitam animais de estimação?</summary><p>Em unidades selecionadas. Informe o porte do animal ao reservar.</p></details>
-        <details><summary>Tem estacionamento?</summary><p>Depende da unidade. Consulte a recepção para vagas e valores.</p></details>
-      </div>
+<section class="sec" id="politicas">
+  <div class="wrap">
+    <div class="sec-cab"><h2>Políticas do hotel</h2></div>
+    <div class="pol">
+      <div><h3>Check-in e check-out</h3><p>Entrada a partir das 14h e saída até as 12h. Entrada antecipada ou saída tardia sob consulta, conforme ocupação.</p></div>
+      <div><h3>Cancelamento</h3><p>Cancelamento sem custo até 72 horas antes da entrada. Depois disso, é cobrada a primeira diária. Em feriados e eventos, as regras podem ser diferentes e são informadas na reserva.</p></div>
+      <div><h3>Crianças</h3><p>Crianças até 5 anos hospedam-se sem custo e sem cama extra, com os responsáveis. Berço sob consulta. De 6 a 12 anos, o café é cobrado à parte.</p></div>
+      <div><h3>Pets</h3><p>Aceitamos cães e gatos de até 10 kg, em apartamentos indicados, com taxa de R$ 60 por estadia. Avise na hora da reserva.</p></div>
+      <div><h3>Pagamento</h3><p>Pix, cartões de crédito e débito. Parcelamento em até 3 vezes sem juros para estadias a partir de três diárias.</p></div>
+      <div><h3>Silêncio e fumo</h3><p>Horário de silêncio das 22h às 7h. Os apartamentos e áreas internas são livres de fumo.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA FINAL -->
-  <section class="final">
-    <div class="wrap final-in">
-      <svg class="final-pillow" viewBox="0 0 64 56" aria-hidden="true"><use href="#logo"/></svg>
-      <div>
-        <h2>Sua cama está esperando</h2>
-        <p>Fale com a recepção e reserve direto pelo WhatsApp: <a class="link-w" data-wa="Olá! Gostaria de informações sobre hospedagem." data-phone href="https://wa.me/5500900000000">(00) 90000-0000</a></p>
-      </div>
-      <a class="btn btn-white" href="#reserva">Reservar agora</a>
+<section class="sec sec-areia" id="faq">
+  <div class="wrap faq-wrap">
+    <div class="sec-cab"><h2>Dúvidas frequentes</h2></div>
+    <div class="faq">
+      <details><summary>Como funciona a reserva direta?</summary><p>Você escolhe as datas na barra do topo e envia a consulta pelo WhatsApp. A recepção confirma disponibilidade e valor, e a reserva é garantida com o pagamento combinado.</p></details>
+      <details><summary>Os valores já incluem o café da manhã?</summary><p>Sim. As diárias exibidas são para duas pessoas, com café da manhã incluso. Os valores variam com a temporada e a ocupação.</p></details>
+      <details><summary>O estacionamento tem custo?</summary><p>Não para hóspedes, mas as vagas são limitadas. Recomendamos avisar a placa do veículo na reserva.</p></details>
+      <details><summary>É possível pedir nota fiscal para a empresa?</summary><p>Sim. Informe a razão social e o CNPJ na reserva para emissão da nota ao final da estadia.</p></details>
+      <details><summary>Vocês aceitam grupos e eventos?</summary><p>Atendemos grupos a partir de cinco apartamentos e reuniões em sala própria para até 30 pessoas. Peça um orçamento pelo WhatsApp.</p></details>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="fecho">
+  <div class="wrap fecho-in">
+    <h2>Reserve direto e fale com quem atende o hotel</h2>
+    <a class="btn btn-wa" data-wa="Olá! Gostaria de reservar uma hospedagem." href="#"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+  </div>
+</section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap foot-grid">
-    <div class="foot-brand">
-      <a class="brand brand-on-dark" href="#inicio" aria-label="Soneca Hotéis"><svg class="logo" viewBox="0 0 64 56" aria-hidden="true"><use href="#logo"/></svg><span class="brand-name"><span data-brand>Soneca Hotéis</span></span></a>
-      <p>Hotelaria urbana simples, simpática e com cama de verdade.</p>
+<footer class="rodape">
+  <div class="wrap rodape-in">
+    <div>
+      <p class="rodape-marca" data-brand>Hotel Ipê Real</p>
+      <p>Av. das Palmeiras, 480, Centro<br>CEP 00000-000, Cidade Exemplo</p>
     </div>
     <div>
-      <h3>Unidades</h3>
-      <ul><li>Soneca Centro</li><li>Soneca Estação</li><li>Soneca Parque</li><li>Soneca Aeroporto</li></ul>
+      <p>WhatsApp e reservas<br><strong data-phone>(00) 90000-0000</strong></p>
+      <p>reservas@hotelipereal.exemplo</p>
     </div>
     <div>
-      <h3>Hóspede</h3>
-      <ul><li><a href="#quartos">Quartos</a></li><li><a href="#ofertas">Ofertas</a></li><li><a href="#politicas">Políticas</a></li><li><a href="#faq">Dúvidas</a></li></ul>
-    </div>
-    <div>
-      <h3>Contato</h3>
-      <ul><li><a data-wa="Olá! Gostaria de informações sobre hospedagem." data-phone href="https://wa.me/5500900000000">(00) 90000-0000</a></li><li>Endereço: Rua Exemplo, 000, Centro</li></ul>
+      <p>Recepção 24 horas<br>Café: 6h30 às 10h</p>
     </div>
   </div>
-  <div class="wrap foot-base">
-    <p>Site de demonstração. Nome, marca, unidades, preços e condições são fictícios.</p>
-  </div>
+  <p class="wrap demo">Site de demonstração. Nome, preços, endereço e contatos são fictícios.</p>
 </footer>
+
+<a class="flutuante" data-wa="Olá! Gostaria de informações sobre hospedagem." href="#" aria-label="Falar pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 
 <script src="script.js"></script>
 </body>

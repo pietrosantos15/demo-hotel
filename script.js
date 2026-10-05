@@ -11,7 +11,7 @@ const fmtPhone = n => {
 
 if (NOME) {
   document.querySelectorAll("[data-brand]").forEach(el => (el.textContent = NOME));
-  document.title = NOME + " | Durma bem, acorde pronto";
+  document.title = NOME + " | Hospedagem no centro, reserva direta";
 }
 document.querySelectorAll("a[data-wa]").forEach(a => (a.href = waUrl(a.dataset.wa)));
 if (params.get("wa")) document.querySelectorAll("[data-phone]").forEach(el => (el.textContent = fmtPhone(WA)));
@@ -35,7 +35,7 @@ form.entrada.addEventListener("change", () => {
 
 form.addEventListener("submit", e => {
   e.preventDefault();
-  const { entrada, saida, hospedes, unidade, promo } = form;
+  const { entrada, saida, hospedes, quarto } = form;
   let msg = "";
   if (!entrada.value || !saida.value) msg = "Escolha a data de entrada e a de saída.";
   else if (entrada.value < iso(new Date())) msg = "A entrada não pode ser em uma data passada.";
@@ -45,8 +45,7 @@ form.addEventListener("submit", e => {
   if (msg) return;
   const noites = Math.round((new Date(saida.value) - new Date(entrada.value)) / dia);
   const n = hospedes.value;
-  const cod = promo.value.trim();
-  const texto = `Olá! Gostaria de consultar disponibilidade na unidade ${unidade.value} de ${br(entrada.value)} a ${br(saida.value)} (${noites} ${noites > 1 ? "noites" : "noite"}) para ${n} ${n === "1" ? "hóspede" : "hóspedes"}.` + (cod ? ` Código promocional: ${cod}.` : "");
+  const texto = `Olá! Gostaria de consultar disponibilidade${quarto.value ? " para o apartamento " + quarto.value : ""} de ${br(entrada.value)} a ${br(saida.value)} (${noites} ${noites > 1 ? "noites" : "noite"}) para ${n} ${n === "1" ? "hóspede" : "hóspedes"}.` ;
   window.open(waUrl(texto), "_blank", "noopener");
 });
 
